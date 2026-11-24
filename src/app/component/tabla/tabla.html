@@ -1,0 +1,32 @@
+<div>
+  <table class="table table-hover table-striped">
+    <thead class="bg-success text-white">
+      <tr>
+        @for (col of columns(); track col.key) {
+          <th>{{ col.header }}</th>
+        }
+        @if (actionTemplate()) {
+          <th class="text-center">Acciones</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of data(); track $index) {
+        <tr>
+          @for (col of columns(); track col.key) {
+            <td>{{ row[col.key] }}</td>
+          }
+          @if (actionTemplate()) {
+            <td class="text-center">
+              <ng-container
+                *ngTemplateOutlet="actionTemplate()!; context: { $implicit: row }">
+              </ng-container>
+            </td>
+          }
+        </tr>
+      } @empty {
+        <tr><td [attr.colspan]="columns().length">No hay datos para mostrar</td></tr>
+      }
+    </tbody>
+  </table>
+</div>

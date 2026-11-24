@@ -1,0 +1,24 @@
+<form [formGroup]="form()" (ngSubmit)="onSubmit()" class="form-container">
+  @for (field of fields(); track field.key) {
+    <div class="form-group">
+      <label [for]="field.key">{{ field.label }}</label>
+      @if (field.type === 'select') {
+        <select [id]="field.key" [formControlName]="field.key" class="form-control">
+          <option value="">Seleccione una opción</option>
+          @for (opt of field.options ?? []; track opt.value) {
+            <option [value]="opt.value">{{ opt.label }}</option>
+          }
+        </select>
+      } @else {
+        <input class="form-control" [id]="field.key"
+          [type]="field.type || 'text'" [formControlName]="field.key"
+          [placeholder]="field.placeholder || ''" />
+      }
+      @if (form().get(field.key)?.invalid && form().get(field.key)?.touched) {
+        <small class="error-text">Este campo es requerido.</small>
+      }
+    </div>
+  }
+  <br><br>
+  <button class="btn btn-success" type="submit" [disabled]="form().invalid">Guardar</button>
+</form>

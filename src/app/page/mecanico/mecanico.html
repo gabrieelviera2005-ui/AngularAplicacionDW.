@@ -1,0 +1,26 @@
+<app-menu [activo]="1"></app-menu>
+<div class="container">
+  @if (mensaje(); as aviso) {
+    <div [class]="aviso.tipo">{{ aviso.texto }}</div>
+  }
+  @if (lista) {
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-success" (click)="mostrar()">Nuevo</button>
+    </div>
+    <hr>
+    <ng-template #misAcciones let-mecanico>
+      <button class="btn btn-danger" (click)="eliminarRegistro(mecanico.id)" title="Eliminar">
+        Eliminar
+      </button>
+    </ng-template>
+    <app-tabla [data]="data()" [columns]="columnasUsuarios" [actionTemplate]="misAcciones">
+    </app-tabla>
+  } @else {
+    <div class="d-flex justify-content-start">
+      <button class="btn btn-primary" (click)="mostrar()">Regresar</button>
+    </div>
+    <hr>
+    <app-formulario [fields]="camposMecanico()" (submitForm)="guardarMecanico($event)">
+    </app-formulario>
+  }
+</div>

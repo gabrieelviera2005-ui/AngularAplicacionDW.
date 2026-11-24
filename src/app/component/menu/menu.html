@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Taller Mecánico</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarNavDropdown">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="navbar-nav">
+      @if(activo() == 1){
+        <a class="nav-item nav-link active" href="mecanico">Mecánicos</a>
+      }@else{
+        <a class="nav-item nav-link" href="mecanico">Mecánicos</a>
+      }
+      @if(activo() == 2){
+        <a class="nav-item nav-link active" href="vehiculo">Vehículos</a>
+      }@else{
+        <a class="nav-item nav-link" href="vehiculo">Vehículos</a>
+      }
+      @if(activo() == 3){
+        <a class="nav-item nav-link active" href="orden">Órdenes de Servicio</a>
+      }@else{
+        <a class="nav-item nav-link" href="orden">Órdenes de Servicio</a>
+      }
+    </div>
+  </div>
+</nav>
+

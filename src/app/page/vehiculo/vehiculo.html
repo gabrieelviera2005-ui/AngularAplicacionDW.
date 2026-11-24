@@ -1,0 +1,17 @@
+<app-menu [activo]="2"></app-menu>
+<div class="container">
+  <h1 class="my-4">Vehículos</h1>
+  @if (lista) {
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-success" (click)="mostrar()">Nuevo</button>
+    </div>
+    <hr>
+    <app-tabla [data]="data()" [columns]="columnas"></app-tabla>
+  } @else {
+    <div class="d-flex justify-content-start">
+      <button class="btn btn-primary" (click)="mostrar()">Regresar</button>
+    </div>
+    <hr>
+    <app-formulario [fields]="campos" (submitForm)="guardar($event)"></app-formulario>
+  }
+</div>
