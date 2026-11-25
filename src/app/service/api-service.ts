@@ -18,11 +18,11 @@ export interface Especialidad {
 
 @Injectable({ providedIn: 'root' })
 export class ApiServiceTs {
-  private readonly apiUrl = 'http://localhost:3000/api/';
+  private readonly apiUrl = 'http://vmi3607581.contaboserver.net/taller/';
   private readonly http = inject(HttpClient);
 
   getMecanicos() {
-    return this.http.get<MecanicoRegistro[]>(this.apiUrl + 'mecanicos');
+    return this.http.get<MecanicoRegistro[]>(this.apiUrl + 'lista');
   }
 
   getEspecialidades() {
