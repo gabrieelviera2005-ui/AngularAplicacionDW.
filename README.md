@@ -2,6 +2,12 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.2.
 
+## Información general
+
+Tallermecanico es una aplicación web para gestionar mecánicos, vehículos y órdenes de taller.
+
+**Persistencia de datos:** la API local de mecánicos guarda los registros solo en memoria; no utiliza una base de datos. Los mecánicos creados se pierden cuando se detiene o reinicia el servidor.
+
 ## Development server
 
 To start a local development server, run:
@@ -21,7 +27,6 @@ npm run start:api
 ```
 
 La API queda disponible en `http://localhost:3000/api`. Inicia Angular en otra terminal con `npm start`.
-Los mecánicos se guardan en memoria y se reinician al detener el servidor.
 
 ## Code scaffolding
 
