@@ -12,6 +12,17 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+## API local
+
+En una terminal, inicia la API con:
+
+```bash
+npm run start:api
+```
+
+La API queda disponible en `http://localhost:3000/api`. Inicia Angular en otra terminal con `npm start`.
+Los mecánicos se guardan en memoria y se reinician al detener el servidor.
+
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:

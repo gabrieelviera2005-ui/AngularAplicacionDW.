@@ -18,11 +18,11 @@ export interface Especialidad {
 
 @Injectable({ providedIn: 'root' })
 export class ApiServiceTs {
-  private readonly apiUrl = 'http://TU_SERVIDOR/taller/';
+  private readonly apiUrl = 'http://localhost:3000/api/';
   private readonly http = inject(HttpClient);
 
   getMecanicos() {
-    return this.http.get<MecanicoRegistro[]>(this.apiUrl + 'lista');
+    return this.http.get<MecanicoRegistro[]>(this.apiUrl + 'mecanicos');
   }
 
   getEspecialidades() {
@@ -30,10 +30,10 @@ export class ApiServiceTs {
   }
 
   guardarMecanico(datos: Record<string, unknown>) {
-    return this.http.post(this.apiUrl + 'nuevo_mecanico', datos);
+    return this.http.post(this.apiUrl + 'mecanicos', datos);
   }
 
   eliminarMecanico(id: number) {
-    return this.http.post(this.apiUrl + 'eliminar_mecanico', id);
+    return this.http.delete(this.apiUrl + 'mecanicos/' + id);
   }
 }
