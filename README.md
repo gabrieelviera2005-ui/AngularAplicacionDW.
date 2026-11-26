@@ -6,7 +6,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 Tallermecanico es una aplicación web para gestionar mecánicos, vehículos y órdenes de taller.
 
-**Persistencia de datos:** la API local de mecánicos guarda los registros solo en memoria; no utiliza una base de datos. Los mecánicos creados se pierden cuando se detiene o reinicia el servidor.
+**Persistencia de datos:** la API local guarda mecánicos, vehículos y órdenes de servicio en `server/mecanicos.json`, `server/vehiculos.json` y `server/ordenes.json`. Los datos permanecen después de reiniciar el servidor.
 
 ## Development server
 

@@ -39,6 +39,11 @@ testem.log
 /typings
 __screenshots__/
 
+# Local application data
+/server/mecanicos.json
+/server/vehiculos.json
+/server/ordenes.json
+
 # System files
 .DS_Store
 Thumbs.db

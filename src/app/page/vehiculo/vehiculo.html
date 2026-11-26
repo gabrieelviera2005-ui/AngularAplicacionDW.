@@ -1,6 +1,9 @@
 <app-menu [activo]="2"></app-menu>
 <div class="container">
   <h1 class="my-4">Vehículos</h1>
+  @if (mensaje(); as texto) {
+    <div class="alert alert-danger">{{ texto }}</div>
+  }
   @if (lista) {
     <div class="d-flex justify-content-end">
       <button class="btn btn-success" (click)="mostrar()">Nuevo</button>
