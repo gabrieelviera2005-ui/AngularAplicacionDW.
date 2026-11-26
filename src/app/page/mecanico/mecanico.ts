@@ -90,7 +90,7 @@ export class Mecanico implements OnInit {
     this.mostrar();
   }
 
-  eliminarRegistro(id: number): void {
+  eliminarRegistro(id: string): void {
     if (confirm(`¿Estás seguro de que deseas eliminar el registro con ID: ${id}?`)) {
       this.apiService.eliminarMecanico(id).subscribe({
         next: () => this.cargar(),
@@ -113,7 +113,7 @@ export class Mecanico implements OnInit {
     { key: 'id', header: 'ID' },
     { key: 'nombre', header: 'Nombre' },
     { key: 'apellido', header: 'Apellido' },
-    { key: 'codigo', header: 'Código' },
+    { key: 'telefono', header: 'Teléfono' },
     { key: 'especialidad', header: 'Especialidad' },
     { key: 'horas', header: 'Horas' },
   ];

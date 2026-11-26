@@ -3,16 +3,14 @@ import { inject, Injectable } from '@angular/core';
 
 export interface MecanicoRegistro {
   [key: string]: unknown;
-  id: number;
+  id: string;
   nombre: string;
   apellido: string;
-  codigo: string;
-  especialidad: string;
-  horas: number;
+  telefono: string;
 }
 
 export interface Especialidad {
-  id: number;
+  id: string;
   nombre: string;
 }
 
@@ -33,7 +31,7 @@ export class ApiServiceTs {
     return this.http.post(this.apiUrl + 'mecanicos', datos);
   }
 
-  eliminarMecanico(id: number) {
+  eliminarMecanico(id: string) {
     return this.http.delete(this.apiUrl + 'mecanicos/' + id);
   }
 }
